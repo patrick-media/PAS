@@ -1,0 +1,99 @@
+~~ [x] I
+~~ [x] R
+~~ [x] RI
+~~ [x] IR
+~~ [x] FI
+~~ [x] FR
+~~ [x] FRI
+~~ [x] FIR
+~~ [x] DF
+~~ [x] RDF
+~~ [x] IDF
+~~ [x] DFR
+~~ [x] DFI
+
+~~ RI
+lvr %r0, $0x4
+~~ RI
+lvr %r1, $0x5
+~~ RI
+lvrx %r10, $0x6
+~~ RI
+lvrx %r11, $0x7
+~~ R
+add %r2, %r0, %r1
+~~ IDF
+addx %r12, $0x8, ($0x10)
+~~ R
+sub %r3, %r1, %r0
+~~ R
+subx %r13, %r11, %r10
+~~ R
+mul %r4, %r0, %r1
+~~ R
+mulx %r14, %r10, %r11
+~~ R
+div %r5, %r0, %r1
+~~ R
+divx %r15, %r10, %r11
+~~ FI
+fadd %f0, $8.0f, $4.5f
+~~ FRI
+fsub %f1, %f0, $4.5f
+~~ FIR
+fmul %f2, $8.0f, %f1
+~~ FR
+fdiv %f3, %f2, %f1
+~~ RDF
+lfp %r6, ($0x100)
+~~ RDF
+lfpx %r16, ($0x8C0040)
+~~ I
+int $0x10
+~~ RI
+lpi %r7, $0x5
+~~ RI
+lpix %r17, $0x9
+~~ IR
+lpo $0x5, %r6
+~~ IR
+lpox $0x9, $r16
+~~ DFR
+slv ($0x20), %r0
+~~ DFI
+slvx ($0x30), $0x3
+~~ DF
+vts ($0x20)
+~~ DF
+vtsx ($0x30)
+~~ 
+~~ must follow stack rule: vtsx will pop an ex value so it needs to be into an ex register
+vfsx %r18
+~~ 
+vfs %r8
+~~ 
+ret
+~~ 
+jmp
+~~ 
+jpr
+~~ 
+jeq
+~~ 
+jls
+~~ 
+jgr
+~~ 
+jle
+~~ 
+jge
+~~ 
+jzo
+~~ 
+jcr
+~~ 
+jne
+~~ 
+com
+~~ 
+comx

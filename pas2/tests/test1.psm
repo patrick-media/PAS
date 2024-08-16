@@ -1,0 +1,7 @@
+lvr %r0, $0x4
+lvr  %r1,   $0x5
+testlabel:
+testlabel2:
+testlabel3: add %r2, %r0, %r1
+add %r5, $0x2, $0x6
+slv ($0x20), %r2
